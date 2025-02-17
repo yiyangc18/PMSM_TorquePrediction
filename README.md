@@ -1,4 +1,4 @@
-```markdown
+
 # PMSM Torque Prediction
 
 This project is designed to predict the torque output of Permanent Magnet Synchronous Motors (PMSM) in electric vehicles, focusing on data-driven approaches and machine learning techniques. The aim is to model the torque dynamics based on various motor parameters and operating conditions.
