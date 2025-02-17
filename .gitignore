@@ -6,6 +6,18 @@ __pycache__/
 # C extensions
 *.so
 
+# 忽略日志文件
+*.log
+
+# 忽略数据文件夹和临时数据
+data/
+discard/
+*.csv
+*.tmp
+*.json
+
+
+
 # Distribution / packaging
 .Python
 build/
