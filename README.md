@@ -5,7 +5,7 @@ This project is designed to predict the torque output of Permanent Magnet Synchr
 
 ## Overview
 
-This repository contains scripts and models for predicting the output torque of PMSM motors based on an open-source dataset [https://github.com/upb-lea/deep-pmsm]. The project covers multiple phases, including dataset split, online/offline LQR parameter identification, training models, and validating the predictions.
+This repository contains scripts and models for predicting the output torque of PMSM motors based on an open-source dataset [https://github.com/upb-lea/deep-pmsm]. The project covers multiple phases, including dataset split, online/offline RLS parameter identification, training models, and validating the predictions.
 
 
 ## File Descriptions
@@ -16,8 +16,8 @@ This repository contains scripts and models for predicting the output torque of 
 | `hyperparameter_search.py`            | Used for searching the optimal hyperparameters for the model.       |
 | `models.py`                           | Defines the model architecture for PMSM torque prediction.         |
 | `config.py`                           | Contains configuration parameters for the model.                  |
-| `motor_online_identification.py`      | Implements online motor LQR parameter identification during operation. |
-| `motor_parameter_identification.py`   | Script for LQR offline motor parameter identification.             |
+| `motor_online_identification.py`      | Implements online motor RLS parameter identification during operation. |
+| `motor_parameter_identification.py`   | Script for RLS offline motor parameter identification.             |
 | `offline_train_validation.py`         | Trains and validates the model using train-data.                   |
 | `online_pretrain.py`                  | Pre-trains the model online using the training dataset.            |
 | `online_train_validation.py`          | Performs online training and validation, updating the model with real-time data. |
@@ -46,16 +46,16 @@ Download data from: https://www.kaggle.com/datasets/wkirgsn/electric-motor-tempe
 
 All the results will be processed by the `result_processor.py` script, which will save the results in the `results` folder.
 
-### Offline/Online LQR
+### Offline/Online RLS
 
-LQR parameter identification can be performed offline or online. 
+RLS parameter identification can be performed offline or online. 
 
-offline LQR parameter identification can be performed by running:
+offline RLS parameter identification can be performed by running:
 ```bash
 python motor_parameter_identification.py
 ```
 
-online LQR parameter identification can be performed by running:
+online RLS parameter identification can be performed by running:
 ```bash
 python motor_online_identification.py
 ```
